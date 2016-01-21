@@ -3,9 +3,9 @@ package com.ssm.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.ssm.domain.Role;
 import com.ssm.domain.User;
 import com.ssm.enums.GenderEnum;
-import com.ssm.enums.RoleEnum;
 import com.ssm.enums.StatusEnum;
 
 import lombok.AllArgsConstructor;
@@ -55,9 +55,9 @@ public class UserDto implements Serializable {
 	private String headPortraitId;
 
 	/**
-	 * 角色RoleEnum
+	 * 角色Role
 	 */
-	private RoleEnum role;
+	private Role role;
 
 	/**
 	 * 状态StatusEnum

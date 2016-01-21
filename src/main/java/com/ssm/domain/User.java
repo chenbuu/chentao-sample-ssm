@@ -7,11 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ssm.enums.GenderEnum;
-import com.ssm.enums.RoleEnum;
 import com.ssm.enums.StatusEnum;
 
 import lombok.AllArgsConstructor;
@@ -21,7 +21,7 @@ import lombok.RequiredArgsConstructor;
 
 /**
  * 用户
- * 底层对象不关联外键
+ * 底层对象不关联外键,大部分字段无法Json序列化
  * 注意：修改属性时候需要维护Dto
  * @author ChenTao
  * @date 2015年11月18日下午9:41:14
@@ -31,7 +31,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "t_user")
+@Table
 public class User implements Serializable {
 
 	private static final long serialVersionUID = -6996578842465803307L;
@@ -46,10 +46,11 @@ public class User implements Serializable {
 	private String headPortraitId;
 
 	/**
-	 * 角色RoleEnum
+	 * 角色Role
 	 */
 	@JsonIgnore
-	private RoleEnum role;
+	@ManyToOne
+	private Role role;
 
 	/**
 	 * 状态StatusEnum

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.ssm.domain.User;
 
-public interface UserRepository extends BaseRepository<User, String> {
+public interface UserRepository extends BaseRepository<User, Long> {
 
 	List<User> findAllByUserNameAndPassword(String userName, String password);
 
