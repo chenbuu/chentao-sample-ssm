@@ -1,6 +1,8 @@
 package com.ssm.domain;
 // default package
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,7 +26,7 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table
-public class PermInstance implements java.io.Serializable {
+public class PermInstance implements Serializable {
 
 	private static final long serialVersionUID = 5217441897592911949L;
 

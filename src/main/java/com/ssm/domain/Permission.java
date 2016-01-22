@@ -1,5 +1,6 @@
 package com.ssm.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -26,24 +27,24 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table
-public class Permission implements java.io.Serializable {
+public class Permission implements Serializable {
 
 	private static final long serialVersionUID = 8986728060324547747L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	/**
 	 * 状态StatusEnum
 	 */
 	private StatusEnum status;
-	
+
 	/**
 	 * 创建时间
 	 */
 	private Date createTime;
-	
+
 	/**
 	 * 名称
 	 */
